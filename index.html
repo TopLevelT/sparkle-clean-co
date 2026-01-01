@@ -2,40 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Website Preview</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sparkle Clean Co | Residential & Commercial Cleaning</title>
+  <meta name="description" content="Sparkle Clean Co provides professional house, deep, move-in/move-out, and office cleaning services you can trust.">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
     }
-    .card {
-      background: #020617;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 420px;
+
+    header {
+      background: #2db7a3;
+      color: white;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,.5);
     }
-    h1 {
-      margin-bottom: 10px;
+
+    nav {
+      background: #1e8f80;
+      padding: 10px;
+      text-align: center;
     }
-    p {
-      opacity: 0.9;
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      color: #2db7a3;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .cta {
+      background: #2db7a3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
+    .cta a {
+      background: white;
+      color: #2db7a3;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e8f80;
+      color: white;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #2db7a3;
+      color: white;
+      border: none;
+      padding: 12px;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #239e8c;
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Website Preview</h1>
-    <p>This is a demo site for client previews.</p>
-    <p>Design, text, and colors are customizable.</p>
+
+<header>
+  <h1>Sparkle Clean Co</h1>
+  <p>Residential & Commercial Cleaning You Can Trust</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>A Cleaner Space. A Brighter Day.</h2>
+  <p>
+    Sparkle Clean Co provides professional, reliable cleaning services for homes and offices.
+    We take pride in our work and treat every space with care.
+  </p>
+
+  <ul>
+    <li>Trusted and friendly cleaners</li>
+    <li>Safe and effective products</li>
+    <li>On-time and dependable service</li>
+    <li>Residential and commercial cleaning</li>
+  </ul>
+
+  <div class="cta">
+    <h3>Ready for a spotless space?</h3>
+    <a href="#contact">Get a Free Quote</a>
   </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="services">
+    <div class="card">
+      <h3>House Cleaning</h3>
+      <p>
+        Regular cleaning for a clean, comfortable home. Weekly, bi-weekly, or monthly options available.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Deep Cleaning</h3>
+      <p>
+        A detailed clean that tackles built-up dirt and hard-to-reach areas.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Move-In / Move-Out</h3>
+      <p>
+        Thorough cleaning for empty homes and apartments. Perfect for moving day.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Office Cleaning</h3>
+      <p>
+        Professional office cleaning to keep your workspace fresh and productive.
+      </p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Let us handle the cleaning</h3>
+    <a href="#contact">Schedule Your Cleaning</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Sparkle Clean Co</h2>
+  <p>
+    Sparkle Clean Co was built on trust, quality, and attention to detail.
+    Our goal is simple: provide dependable cleaning services that make life easier.
+  </p>
+
+  <p>
+    We respect your space, communicate clearly, and stand behind our work.
+    Your satisfaction is always our priority.
+  </p>
+
+  <div class="cta">
+    <h3>Experience the Sparkle Clean difference</h3>
+    <a href="#contact">Book Today</a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    Ready to get started? Fill out the form below and we’ll get back to you with a free quote.
+  </p>
+
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="5" placeholder="Tell us about your cleaning needs"></textarea>
+    <button type="submit">Request Free Quote</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Sparkle Clean Co. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
+
