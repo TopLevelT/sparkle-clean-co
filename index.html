@@ -2,118 +2,384 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Clean Co</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <title>Sparkle Clean Co – Premium Home & Office Cleaning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --sparkle: #0af;
+      --sparkle-dark: #08c;
+      --charcoal: #111;
+      --grey: #555;
+      --light: #f7f9fc;
+      --white: #fff;
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 40px;
+      --space-xxl: 64px;
+      --space-xxxl: 80px;
+      --max: 1200px;
+      --radius: 6px;
+      --speed: .25s;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    h1, h2, h3 {
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--sparkle);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-weight: 500;
+      transition: background var(--speed);
+    }
+    .btn:hover {
+      background: var(--sparkle-dark);
+    }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .text-center {
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--sparkle);
+    }
+    .metric {
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+    .metric-label {
+      font-size: 16px;
+      color: var(--grey);
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid #e5e9f2;
+      border-radius: var(--radius);
+      padding: var(--space-lg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .03);
+    }
+    .pricing-card {
+      text-align: center;
+      padding: var(--space-xl);
+    }
+    .pricing-card.middle {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+    }
+    .price {
+      font-size: 40px;
+      font-weight: 500;
+      margin: var(--space-sm) 0;
+    }
+    .badge-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: center;
+      font-size: 12px;
+      color: var(--grey);
+    }
+    .badge-strip span {
+      background: var(--light);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+    }
+    .timeline-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sparkle);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 500;
+    }
+    footer {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: var(--space-xxl) 0 var(--space-lg);
+      font-size: 14px;
+    }
+    footer h4 {
+      font-size: 16px;
+      margin-bottom: var(--space-sm);
+    }
+    footer a {
+      opacity: .8;
+    }
+    footer a:hover {
+      opacity: 1;
+    }
+    .footer-bottom {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      text-align: center;
+      font-size: 12px;
+      opacity: .7;
+    }
+    @media (min-width: 768px) {
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xxl);
+        align-items: center;
+      }
+      .hero-text {
+        padding-right: var(--space-xl);
+      }
+    }
+  </style>
 </head>
-<body class="font-sans text-gray-900 scroll-smooth">
+<body>
 
-  <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://source.unsplash.com/1600x900/?luxury-home-cleaning');">
-    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-    <div class="container mx-auto h-full flex flex-col justify-center items-start px-6 md:px-12 relative z-10">
-      <h1 class="text-white text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Impeccable Cleaning, Every Time</h1>
-      <p class="text-white text-lg md:text-2xl mb-6 max-w-lg" data-aos="fade-up" data-aos-delay="150">Professional, detail-focused residential cleaning designed for homeowners who demand the best.</p>
-      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">Schedule Your Service</a>
+<!-- HERO -->
+<section style="padding: var(--space-xxxl) 0;">
+  <div class="container hero">
+    <div class="hero-text">
+      <p class="eyebrow">Seattle’s Trusted Cleaning Studio</p>
+      <h1 style="margin: var(--space-sm) 0 var(--space-md); font-size: 56px;">Immaculate spaces. Zero effort.</h1>
+      <p style="font-size: 18px; max-width: 480px; color: var(--grey); margin-bottom: var(--space-lg);">
+        We engineer spotless homes and offices so you reclaim your time—without managing a single detail.
+      </p>
+      <a href="#booking" class="btn">Book My Cleaning</a>
+      <div class="badge-strip" style="margin-top: var(--space-md);">
+        <span>Fully insured</span>
+        <span>Background-checked crews</span>
+        <span>100 % happiness guarantee</span>
+      </div>
     </div>
-  </section>
+    <div>
+      <img src="https://source.unsplash.com/1600x900/?bright-minimalist-living-room-sunlight" alt="Bright minimalist living room">
+    </div>
+  </div>
+</section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-24 bg-white">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">Our Expertise</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up">
-          <img src="https://source.unsplash.com/400x300/?residential-cleaning" alt="Residential Cleaning" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Residential Cleaning</h3>
-          <p>Meticulous care for every room, leaving your home spotless.</p>
+<!-- VALUE -->
+<section style="background: var(--light); padding: var(--space-xxxl) 0;">
+  <div class="container">
+    <div class="grid grid-3 text-center">
+      <div class="card">
+        <h3>Precision Systems</h3>
+        <p style="margin-top: var(--space-sm); color: var(--grey);">
+          Color-coded checklists and QR-coded supplies ensure nothing is ever missed.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Invisible Service</h3>
+        <p style="margin-top: var(--space-sm); color: var(--grey);">
+          Arrive, clean, vanish—like we were never there, except everything gleams.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Time-Back Guarantee</h3>
+        <p style="margin-top: var(--space-sm); color: var(--grey);">
+          If we’re not done in the quoted window, the next clean is free.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section style="padding: var(--space-xxxl) 0;">
+  <div class="container text-center">
+    <div class="grid grid-4" style="margin-bottom: var(--space-xl);">
+      <div>
+        <div class="metric">2,437</div>
+        <div class="metric-label">Seattle homes cleaned</div>
+      </div>
+      <div>
+        <div class="metric">4.9</div>
+        <div class="metric-label">star average (312 reviews)</div>
+      </div>
+      <div>
+        <div class="metric">28</div>
+        <div class="metric-label">minute response time</div>
+      </div>
+      <div>
+        <div class="metric">0</div>
+        <div class="metric-label">items damaged since launch</div>
+      </div>
+    </div>
+    <div class="card" style="max-width: 560px; margin: 0 auto;">
+      <p style="font-size: 20px; font-style: italic; color: var(--charcoal);">
+        “Sparkle turned my Sunday chore day into a trip to the market with my kids. I opened the door to a house that felt brand-new.”
+      </p>
+      <p style="margin-top: var(--space-md); font-weight: 500;">— Maya K., Capitol Hill</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background: var(--light); padding: var(--space-xxxl) 0;">
+  <div class="container">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">How it works</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-num">1</div>
+        <div>
+          <h3>Book in 60 seconds</h3>
+          <p style="color: var(--grey);">Pick frequency, rooms, and add-ons. Checkout locks your slot.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://source.unsplash.com/400x300/?deep-cleaning" alt="Deep Cleaning" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Deep Cleaning</h3>
-          <p>Comprehensive attention to detail, from baseboards to high surfaces.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">2</div>
+        <div>
+          <h3>We arrive equipped</h3>
+          <p style="color: var(--grey);">Vetted team, eco supplies, and a printed checklist—no coordination needed.</p>
         </div>
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://source.unsplash.com/400x300/?move-in-cleaning" alt="Move In/Out Cleaning" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Move-In & Move-Out</h3>
-          <p>Smooth, stress-free transitions with professional cleaning.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">3</div>
+        <div>
+          <h3>Enjoy spotless</h3>
+          <p style="color: var(--grey);">Return to a home that feels like a luxury hotel suite, every time.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Trust Section -->
-  <section id="trust" class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2" data-aos="fade-right">
-        <img src="https://source.unsplash.com/600x400/?professional-cleaner-home" alt="Professional Cleaner" class="rounded shadow-lg">
+<!-- PRICING -->
+<section style="padding: var(--space-xxxl) 0;">
+  <div class="container text-center">
+    <h2 style="margin-bottom: var(--space-xl);">Transparent pricing</h2>
+    <div class="grid grid-3">
+      <div class="card pricing-card">
+        <h3>Essential</h3>
+        <div class="price">$139</div>
+        <p>1–2 bed | 1 bath<br>Dust, surfaces, floors, trash</p>
+        <a href="#booking" class="btn" style="margin-top: var(--space-lg);">Book Essential</a>
       </div>
-      <div class="md:w-1/2" data-aos="fade-left">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Homeowners Choose Sparkle Clean Co</h2>
-        <ul class="space-y-4 text-lg">
-          <li><strong>Over 10 Years of Experience</strong> — Skilled teams delivering consistent results.</li>
-          <li><strong>Fully Licensed & Insured</strong> — Clean with confidence and peace of mind.</li>
-          <li><strong>Satisfaction Guaranteed</strong> — We ensure every detail meets your expectations.</li>
-        </ul>
+      <div class="card pricing-card middle">
+        <h3>Signature</h3>
+        <div class="price">$189</div>
+        <p>2–3 bed | 2 bath<br>Plus inside oven, cabinets, beds made</p>
+        <a href="#booking" class="btn" style="margin-top: var(--space-lg);">Book Signature</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-24 bg-white">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">What Our Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
-          <blockquote class="italic mb-4">“Sparkle Clean Co transformed my home — every corner spotless, every time.”</blockquote>
-          <p class="font-semibold">— Emily R., Chicago</p>
-        </div>
-        <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-          <blockquote class="italic mb-4">“Reliable, professional, and detail-oriented. Highly recommended.”</blockquote>
-          <p class="font-semibold">— Marcus L., Evanston</p>
-        </div>
+      <div class="card pricing-card">
+        <h3>Deep Reset</h3>
+        <div class="price">$299</div>
+        <p>Any size home<br>Top-to-bottom detail, inside fridge, baseboards, windowsills</p>
+        <a href="#booking" class="btn" style="margin-top: var(--space-lg);">Book Deep</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Process Section -->
-  <section id="process" class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6 md:px-12 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">Our Process</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
-          <img src="https://source.unsplash.com/400x300/?schedule-cleaning" alt="Schedule" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Step 1: Schedule</h3>
-          <p>Select your service and preferred time with ease.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://source.unsplash.com/400x300/?cleaning-home" alt="Cleaning" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Step 2: Cleaning</h3>
-          <p>Our expert team arrives on time, fully equipped and thorough.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://source.unsplash.com/400x300/?clean-home-inspection" alt="Review" class="rounded mb-4">
-          <h3 class="text-xl font-semibold mb-2">Step 3: Review</h3>
-          <p>Inspect your home and enjoy a spotless, refreshed space.</p>
-        </div>
+<!-- RISK REVERSAL -->
+<section style="padding: var(--space-xxxl) 0;">
+  <div class="container">
+    <div class="grid grid-2" style="align-items: center;">
+      <div>
+        <h2>Peace-of-mind built in</h2>
+        <p style="margin-top: var(--space-sm); color: var(--grey);">
+          Every booking is insured up to $2 M. If something’s not perfect, we re-clean within 24 h or you don’t pay.
+        </p>
+      </div>
+      <div class="badge-strip">
+        <span>Fully Insured</span>
+        <span>Bonded</span>
+        <span>Pets-Safe Products</span>
+        <span>Local Seattle Team</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Final CTA Section -->
-  <section id="contact" class="py-24 bg-blue-600 text-white text-center">
-    <div class="container mx-auto px-6 md:px-12" data-aos="zoom-in">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready for a Spotless Home?</h2>
-      <p class="text-lg md:text-xl mb-6">Schedule your premium cleaning today and experience the difference.</p>
-      <a href="#contact" class="bg-white text-blue-600 font-semibold py-4 px-8 rounded shadow-lg hover:bg-gray-100 transition-all">Book Your Service</a>
-      <p class="mt-4 text-sm md:text-base">Licensed • Insured • Satisfaction Guaranteed</p>
+<!-- CTA -->
+<section id="booking" style="background: var(--charcoal); color: var(--white); padding: var(--space-xxxl) 0;">
+  <div class="container text-center">
+    <h2 style="font-size: 40px;">Ready to feel the Sparkle difference?</h2>
+    <p style="font-size: 20px; margin: var(--space-md) 0 var(--space-lg); opacity: .9;">
+      Book online now and have a cleaner home by this time tomorrow.
+    </p>
+    <a href="#" class="btn">Book My Cleaning</a>
+    <p style="margin-top: var(--space-sm); font-size: 14px; opacity: .7;">
+      Instant confirmation • No credit card until service complete
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="grid grid-4">
+      <div>
+        <h4>Sparkle Clean Co</h4>
+        <p>Seattle’s premium residential & commercial cleaning studio.</p>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <p>Seattle, Bellevue, Kirkland, Redmond, Mercer Island</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@sparklecleanco.com<br>(206) 555-0147</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Fri 8 am–6 pm<br>Sat 9 am–4 pm<br>Sun Closed</p>
+      </div>
     </div>
-  </section>
-
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+    <div class="footer-bottom">
+      © 2025 Sparkle Clean Co. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
