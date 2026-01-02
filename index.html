@@ -3,194 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Clean Co | Premium Home Cleaning</title>
+  <title>Sparkle Clean Co | Premium Cleaning for Homeowners</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { color: #222; line-height: 1.6; font-size: 16px; }
+    /* --- Global Styles --- */
+    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { line-height: 1.6; color: #111; background: #fff; }
     a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; border: none; }
+    img { max-width: 100%; display: block; }
 
-    /* Containers */
-    section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* --- Sections --- */
+    section { padding: 80px 20px; position: relative; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
-    /* Hero */
-    .hero {
+    /* --- Hero --- */
+    #hero {
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1590490351190-7c6a38b3deec?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center;
       color: #fff;
-      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-9wg5jCEPBsw?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
+    #hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
+    #hero p { font-size: 1.25rem; margin-bottom: 40px; }
+    .btn-primary { background-color: #0077cc; color: #fff; padding: 15px 30px; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+    .btn-primary:hover { background-color: #005fa3; }
+
+    /* --- Services --- */
+    #services { background: #f9f9f9; text-align: center; }
+    #services h2 { font-size: 2.5rem; margin-bottom: 40px; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; }
+    .service-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .service-card p { font-size: 1rem; color: #555; }
+
+    /* --- Why Choose Us --- */
+    #why { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+    #why .content { flex: 1; min-width: 300px; }
+    #why h2 { font-size: 2.5rem; margin-bottom: 30px; }
+    #why ul { list-style: none; }
+    #why li { margin-bottom: 15px; font-weight: 500; }
+    #why img { flex: 1; min-width: 300px; border-radius: 12px; object-fit: cover; }
+
+    /* --- Testimonials --- */
+    #testimonials { background: #f9f9f9; text-align: center; }
+    #testimonials h2 { font-size: 2.5rem; margin-bottom: 50px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; }
+    .testimonial { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); font-style: italic; }
+    .testimonial p { margin-bottom: 15px; }
+    .testimonial span { font-weight: 600; color: #0077cc; }
+
+    /* --- Quote / CTA --- */
+    #quote { text-align: center; background: #0077cc; color: #fff; }
+    #quote h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    #quote p { font-size: 1.1rem; margin-bottom: 40px; }
+    form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
+    input, select { padding: 15px; border-radius: 6px; border: none; font-size: 1rem; }
+    input:focus, select:focus { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.5); }
+    button { padding: 15px; font-size: 1rem; font-weight: 600; border: none; border-radius: 6px; background: #fff; color: #0077cc; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #e6e6e6; }
+
+    /* --- Footer --- */
+    footer { background: #111; color: #fff; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
+    footer a { color: #0077cc; }
+
+    @media (max-width: 768px) {
+      #why { flex-direction: column; }
     }
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      z-index: 1;
-    }
-    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
-    .hero p { font-size: 1.25rem; margin-bottom: 30px; }
-    .hero button {
-      background: #F5A623;
-      color: #fff;
-      padding: 15px 35px;
-      font-size: 1rem;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .hero button:hover { background: #e5941f; }
-
-    /* Services */
-    .services { background: #f9f9f9; text-align: center; }
-    .services h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .service-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card img { width: 100%; height: 200px; object-fit: cover; }
-    .service-card h3 { font-size: 1.25rem; font-weight: 600; padding: 20px 20px 10px; }
-    .service-card p { padding: 0 20px 20px; font-size: 0.95rem; color: #555; }
-
-    /* Difference / Why Us */
-    .difference { text-align: center; }
-    .difference h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-    .feature { background: #fff; border-radius: 10px; padding: 30px 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-    .feature:hover { transform: translateY(-5px); }
-    .feature h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
-    .feature p { color: #555; font-size: 0.95rem; }
-
-    /* Testimonials */
-    .testimonials { background: #f9f9f9; text-align: center; }
-    .testimonials h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; }
-    .testimonial-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .testimonial { background: #fff; border-radius: 10px; padding: 30px 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-    .testimonial p { font-style: italic; color: #555; margin-bottom: 15px; }
-    .testimonial h5 { font-weight: 600; color: #222; }
-
-    /* CTA / Contact */
-    .cta { text-align: center; background: #222; color: #fff; padding: 100px 20px; }
-    .cta h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
-    .cta p { font-size: 1.1rem; margin-bottom: 30px; }
-    .cta form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; }
-    .cta input, .cta textarea { padding: 15px; border-radius: 6px; border: none; font-size: 1rem; }
-    .cta button { background: #F5A623; color: #fff; padding: 15px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: background 0.3s ease; }
-    .cta button:hover { background: #e5941f; }
-
-    /* Footer */
-    footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #777; }
-
-    /* Responsive */
-    @media(max-width:768px){ .hero h1{font-size:2.2rem;} .hero p{font-size:1rem;} }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Exceptional Clean. Every Corner. Every Time.</h1>
-      <p>Sparkle Clean Co delivers meticulous, reliable home cleaning tailored for homeowners who demand perfection.</p>
-      <button>Request Your Premium Cleaning</button>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h1>Cleaning Elevated. Every Corner, Perfected.</h1>
+      <p>Sparkle Clean Co delivers premium, detail-focused cleaning for homeowners who demand excellence.</p>
+      <a href="#quote" class="btn-primary">Request a Quote</a>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="services">
-    <h2>Our Expertise</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1581579187128-24a9367dcb2f?auto=format&fit=crop&w=800&q=80" alt="Residential Cleaning">
-        <h3>Residential Cleaning</h3>
-        <p>Polished, spotless results for every room in your home.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1590490351190-7c6a38b3deec?auto=format&fit=crop&w=800&q=80" alt="Deep Cleaning">
-        <h3>Deep Cleaning</h3>
-        <p>Thorough care for every surface, corner, and crevice.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1612437135446-5d1527b13f50?auto=format&fit=crop&w=800&q=80" alt="Move-In/Move-Out Cleaning">
-        <h3>Move-In / Move-Out</h3>
-        <p>Flawless transitions for your home’s new chapter.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1590464890045-c024c97c5560?auto=format&fit=crop&w=800&q=80" alt="Specialized Treatments">
-        <h3>Specialized Treatments</h3>
-        <p>Ovens, windows, and detailed care where it matters most.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Difference / Why Choose Us -->
-  <section class="difference">
-    <h2>The Sparkle Clean Difference</h2>
-    <div class="features">
-      <div class="feature">
-        <h4>Attention to Detail</h4>
-        <p>No corner overlooked. Every surface shines with care.</p>
-      </div>
-      <div class="feature">
-        <h4>Trusted Professionals</h4>
-        <p>Fully screened, highly trained, and committed to excellence.</p>
-      </div>
-      <div class="feature">
-        <h4>Flexible Scheduling</h4>
-        <p>Cleaning that fits your lifestyle, on your terms.</p>
-      </div>
-      <div class="feature">
-        <h4>Eco-Conscious Cleaning</h4>
-        <p>Premium, safe products that protect your home and family.</p>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Expertise, Delivered With Precision</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>House Cleaning</h3>
+          <p>Comprehensive daily and weekly cleaning tailored to your home.</p>
+        </div>
+        <div class="service-card">
+          <h3>Deep Cleaning</h3>
+          <p>Every corner, unseen dust, and buildup meticulously handled.</p>
+        </div>
+        <div class="service-card">
+          <h3>Move-In / Move-Out Cleaning</h3>
+          <p>Prepare or reset your home to pristine perfection.</p>
+        </div>
+        <div class="service-card">
+          <h3>Office & Commercial Cleaning</h3>
+          <p>Premium cleaning solutions for workspaces that impress.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Homeowners Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial">
-        <p>"Sparkle Clean Co transformed our home! Every detail was perfect."</p>
-        <h5>- Amanda S., Homeowner</h5>
+  <!-- Why Choose Us Section -->
+  <section id="why">
+    <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+      <div class="content">
+        <h2>The Sparkle Clean Co Difference</h2>
+        <ul>
+          <li>Trusted by discerning homeowners for unmatched attention to detail</li>
+          <li>Fully vetted, professional team ensuring peace of mind</li>
+          <li>Flexible, reliable scheduling to suit your lifestyle</li>
+          <li>Satisfaction guaranteed on every visit</li>
+        </ul>
       </div>
-      <div class="testimonial">
-        <p>"Reliable, professional, and meticulous. Highly recommend."</p>
-        <h5>- James T., Homeowner</h5>
-      </div>
-      <div class="testimonial">
-        <p>"The team made our move stress-free with spotless results."</p>
-        <h5>- Rachel P., Homeowner</h5>
+      <img src="https://images.unsplash.com/photo-1581579183333-7cb3f4c2087e?auto=format&fit=crop&w=1650&q=80" alt="Professional cleaning team">
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"Sparkle Clean Co transformed our home — every surface spotless. Professional and meticulous."</p>
+          <span>- Jessica M.</span>
+        </div>
+        <div class="testimonial">
+          <p>"Finally, a cleaning service that delivers exactly what they promise. Highly recommend."</p>
+          <span>- David R.</span>
+        </div>
+        <div class="testimonial">
+          <p>"Their attention to detail is unmatched. Our home feels brand new after every visit."</p>
+          <span>- Lauren K.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA / Contact -->
-  <section class="cta">
-    <h2>Ready for a Sparkling Home?</h2>
-    <p>Book your premium cleaning today and enjoy the comfort of a spotless home.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <textarea placeholder="Cleaning Preferences" rows="4"></textarea>
-      <button type="submit">Request a Quote</button>
-    </form>
+  <!-- Quote / CTA Section -->
+  <section id="quote">
+    <div class="container">
+      <h2>Experience the Sparkle Difference</h2>
+      <p>Get your personalized premium cleaning quote today.</p>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <select required>
+          <option value="">Select Service</option>
+          <option value="house-cleaning">House Cleaning</option>
+          <option value="deep-cleaning">Deep Cleaning</option>
+          <option value="move-in-out">Move-In / Move-Out</option>
+          <option value="office-cleaning">Office & Commercial</option>
+        </select>
+        <button type="submit">Request a Quote</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2026 Sparkle Clean Co. All Rights Reserved.
+    <p>© 2026 Sparkle Clean Co | Serving premium homes with care and precision</p>
+    <p><a href="mailto:info@sparklecleanco.com">info@sparklecleanco.com</a> | (123) 456-7890</p>
   </footer>
 
 </body>
