@@ -1,155 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ultimate Website Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #0b0f1c;
-      --accent: #38bdf8;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --card: #1a1f2c;
-      --border: #2c3244;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height:1.6; scroll-behavior:smooth;}
-    a { text-decoration:none; color: inherit; }
-
-    /* NAVBAR */
-    nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:sticky; top:0; background:rgba(11,15,28,0.85); backdrop-filter:blur(8px); z-index:1000; }
-    nav .logo { font-weight:800; font-size:1.5rem; color:var(--accent);}
-    nav ul { display:flex; gap:25px; list-style:none;}
-    nav ul li a { font-weight:600; transition:0.2s; }
-    nav ul li a:hover { color:var(--accent); }
-
-    /* HERO */
-    header { text-align:center; padding:120px 20px 80px 20px; max-width:1000px; margin:auto;}
-    header h1 { font-size:clamp(2.5rem,5vw,4rem); margin-bottom:20px;}
-    header p { color:var(--muted); font-size:1.1rem; margin-bottom:30px;}
-    .hero-btn { background: linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0b0f1c; padding:16px 32px; border-radius:999px; font-weight:700; box-shadow:0 15px 40px rgba(56,189,248,.3); transition:0.3s;}
-    .hero-btn:hover { transform:translateY(-3px); box-shadow:0 25px 60px rgba(56,189,248,.5); }
-
-    /* FEATURES */
-    section { max-width:1100px; margin:auto; padding:80px 20px;}
-    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px;}
-    .feature-card { background: var(--card); border-radius:20px; padding:30px; text-align:center; transition:0.3s; border:1px solid var(--border);}
-    .feature-card:hover { transform:translateY(-6px); border-color:var(--accent);}
-    .feature-card h3 { font-size:1.3rem; margin-bottom:12px;}
-    .feature-card p { color:var(--muted); font-size:.95rem;}
-
-    /* PRICING */
-    .pricing { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; margin-top:50px;}
-    .price-card { background: var(--card); border-radius:22px; padding:36px; text-align:center; border:1px solid var(--border); transition:0.3s;}
-    .price-card:hover { transform:translateY(-6px); border-color:var(--accent);}
-    .price-card h4 { font-size:1.4rem; margin-bottom:10px;}
-    .price { font-size:2.2rem; font-weight:800; margin:20px 0; }
-    .price span { font-size:1rem; color:var(--muted);}
-    ul { list-style:none; margin-top:20px; text-align:left; padding-left:0;}
-    ul li { margin-bottom:12px; color:var(--muted); display:flex; align-items:center; gap:8px; }
-
-    /* TESTIMONIALS */
-    .testimonials { margin-top:80px;}
-    .testimonial-card { background: var(--card); border-radius:20px; padding:24px; border:1px solid var(--border); margin-bottom:20px; }
-    .testimonial-card p { font-style:italic; color:var(--muted);}
-    .testimonial-card h5 { margin-top:12px; font-weight:700; font-size:1.05rem;}
-
-    /* LOGOS */
-    .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; align-items:center; margin-top:60px; }
-    .logos img { filter: grayscale(1) brightness(1.3); width:100px; transition:0.3s;}
-    .logos img:hover { filter: none; transform:scale(1.1); }
-
-    /* FOOTER */
-    footer { padding:50px 20px; text-align:center; border-top:1px solid var(--border); color:var(--muted);}
-    footer a { color:var(--muted); margin:0 8px; transition:0.2s;}
-    footer a:hover { color:var(--accent); }
-
-    /* MEDIA */
-    @media(max-width:768px){ nav ul { flex-direction:column; gap:15px; margin-top:10px;} }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparkle Clean Co</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e0f7e0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cta {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta a {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .cta a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="logo">WebElite</div>
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <header>
-    <h1>Build Stunning Websites That Convert</h1>
-    <p>Professional, responsive, and client-ready websites — see a live demo before you buy.</p>
-    <a class="hero-btn" href="#pricing">View Packages</a>
-  </header>
-
-  <!-- FEATURES -->
-  <section id="features">
-    <div class="features">
-      <div class="feature-card">
-        <h3>⚡ Fast & Responsive</h3>
-        <p>Optimized for speed, SEO, and mobile devices out of the box.</p>
-      </div>
-      <div class="feature-card">
-        <h3>🎨 Modern Design</h3>
-        <p>Custom designs tailored for your brand. No boring templates.</p>
-      </div>
-      <div class="feature-card">
-        <h3>🔒 Secure & Reliable</h3>
-        <p>HTTPS, clean code, and best practices included for peace of mind.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGOS -->
-  <section>
-    <div class="logos">
-      <img src="https://via.placeholder.com/100x40?text=Logo1" alt="Logo1">
-      <img src="https://via.placeholder.com/100x40?text=Logo2" alt="Logo2">
-      <img src="https://via.placeholder.com/100x40?text=Logo3" alt="Logo3">
-      <img src="https://via.placeholder.com/100x40?text=Logo4" alt="Logo4">
-      <img src="https://via.placeholder.com/100x40?text=Logo5" alt="Logo5">
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <h2 style="text-align:center; margin-bottom:50px;">Website Packages</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h4>Starter</h4>
-        <div class="price">$299 <span>one-time</span></div>
-        <ul>
-          <li>✔ 1-3 Pages</li>
-          <li>✔ Mobile Friendly</li>
-          <li>✔ Basic SEO</li>
-        </ul>
-      </div>
-      <div class="price-card" style="border-color:var(--accent);">
-        <h4>Professional</h4>
-        <div class="price">$599 <span>one-time</span></div>
-        <ul>
-          <li>✔ 5-7 Pages</li>
-          <li>✔ Custom Design</li>
-          <li>✔ SEO Optimization</li>
-          <li>✔ Analytics Setup</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <h4>Premium</h4>
-        <div class="price">$999 <span>one-time</span></div>
-        <ul>
-          <li>✔ Unlimited Pages</li>
-          <li>✔ Advanced Animations</li>
-          <li>✔ Conversion Optimizati
+    <header>
+        <h1>Sparkle Clean Co</h1>
+        <p>Friendly, professional cleaning for your home</p>
+    </header>
+    <main>
+        <section>
+            <h2>Our Services</h2>
+            <ul>
+                <li>Regular house cleaning</li>
+                <li>Deep cleaning</li>
+                <li>Move-in / Move-out cleaning</li>
+                <li>Kitchen and bathroom cleaning</li>
+                <li>Custom cleaning requests</li>
+            </ul>
+        </section>
+        <section class="cta">
+            <h2>Get Started Today!</h2>
+            <p>Contact us to book your cleaning service.</p>
+            <a href="mailto:info@sparklecleanco.com">Contact Us</a>
+        </section>
+    </main>
+</body>
+</html>
