@@ -3,174 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkle Clean Co | Premium Cleaning for Homeowners</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* --- Global Styles --- */
-    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { line-height: 1.6; color: #111; background: #fff; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* --- Sections --- */
-    section { padding: 80px 20px; position: relative; }
-    .container { max-width: 1200px; margin: 0 auto; }
-
-    /* --- Hero --- */
-    #hero {
-      height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-9wg5jCEPBsw?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
-    }
-    #hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
-    #hero p { font-size: 1.25rem; margin-bottom: 40px; }
-    .btn-primary { background-color: #0077cc; color: #fff; padding: 15px 30px; border-radius: 6px; font-weight: 600; transition: 0.3s; }
-    .btn-primary:hover { background-color: #005fa3; }
-
-    /* --- Services --- */
-    #services { background: #f9f9f9; text-align: center; }
-    #services h2 { font-size: 2.5rem; margin-bottom: 40px; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; }
-    .service-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-    .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
-    .service-card p { font-size: 1rem; color: #555; }
-
-    /* --- Why Choose Us --- */
-    #why { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-    #why .content { flex: 1; min-width: 300px; }
-    #why h2 { font-size: 2.5rem; margin-bottom: 30px; }
-    #why ul { list-style: none; }
-    #why li { margin-bottom: 15px; font-weight: 500; }
-    #why img { flex: 1; min-width: 300px; border-radius: 12px; object-fit: cover; }
-
-    /* --- Testimonials --- */
-    #testimonials { background: #f9f9f9; text-align: center; }
-    #testimonials h2 { font-size: 2.5rem; margin-bottom: 50px; }
-    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; }
-    .testimonial { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); font-style: italic; }
-    .testimonial p { margin-bottom: 15px; }
-    .testimonial span { font-weight: 600; color: #0077cc; }
-
-    /* --- Quote / CTA --- */
-    #quote { text-align: center; background: #0077cc; color: #fff; }
-    #quote h2 { font-size: 2.5rem; margin-bottom: 20px; }
-    #quote p { font-size: 1.1rem; margin-bottom: 40px; }
-    form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
-    input, select { padding: 15px; border-radius: 6px; border: none; font-size: 1rem; }
-    input:focus, select:focus { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.5); }
-    button { padding: 15px; font-size: 1rem; font-weight: 600; border: none; border-radius: 6px; background: #fff; color: #0077cc; cursor: pointer; transition: 0.3s; }
-    button:hover { background: #e6e6e6; }
-
-    /* --- Footer --- */
-    footer { background: #111; color: #fff; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
-    footer a { color: #0077cc; }
-
-    @media (max-width: 768px) {
-      #why { flex-direction: column; }
-    }
-  </style>
+  <title>Sparkle Clean Co</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
-<body>
+<body class="font-sans text-gray-900 scroll-smooth">
 
   <!-- Hero Section -->
-  <section id="hero">
-    <div class="container">
-      <h1>Cleaning Elevated. Every Corner, Perfected.</h1>
-      <p>Sparkle Clean Co delivers premium, detail-focused cleaning for homeowners who demand excellence.</p>
-      <a href="#quote" class="btn-primary">Request a Quote</a>
+  <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://source.unsplash.com/1600x900/?luxury-home-cleaning');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="container mx-auto h-full flex flex-col justify-center items-start px-6 md:px-12 relative z-10">
+      <h1 class="text-white text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Impeccable Cleaning, Every Time</h1>
+      <p class="text-white text-lg md:text-2xl mb-6 max-w-lg" data-aos="fade-up" data-aos-delay="150">Professional, detail-focused residential cleaning designed for homeowners who demand the best.</p>
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">Schedule Your Service</a>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2>Our Expertise, Delivered With Precision</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <h3>House Cleaning</h3>
-          <p>Comprehensive daily and weekly cleaning tailored to your home.</p>
+  <section id="services" class="py-24 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">Our Expertise</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up">
+          <img src="https://source.unsplash.com/400x300/?residential-cleaning" alt="Residential Cleaning" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Residential Cleaning</h3>
+          <p>Meticulous care for every room, leaving your home spotless.</p>
         </div>
-        <div class="service-card">
-          <h3>Deep Cleaning</h3>
-          <p>Every corner, unseen dust, and buildup meticulously handled.</p>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://source.unsplash.com/400x300/?deep-cleaning" alt="Deep Cleaning" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Deep Cleaning</h3>
+          <p>Comprehensive attention to detail, from baseboards to high surfaces.</p>
         </div>
-        <div class="service-card">
-          <h3>Move-In / Move-Out Cleaning</h3>
-          <p>Prepare or reset your home to pristine perfection.</p>
-        </div>
-        <div class="service-card">
-          <h3>Office & Commercial Cleaning</h3>
-          <p>Premium cleaning solutions for workspaces that impress.</p>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://source.unsplash.com/400x300/?move-in-cleaning" alt="Move In/Out Cleaning" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Move-In & Move-Out</h3>
+          <p>Smooth, stress-free transitions with professional cleaning.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section id="why">
-    <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
-      <div class="content">
-        <h2>The Sparkle Clean Co Difference</h2>
-        <ul>
-          <li>Trusted by discerning homeowners for unmatched attention to detail</li>
-          <li>Fully vetted, professional team ensuring peace of mind</li>
-          <li>Flexible, reliable scheduling to suit your lifestyle</li>
-          <li>Satisfaction guaranteed on every visit</li>
+  <!-- Trust Section -->
+  <section id="trust" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <img src="https://source.unsplash.com/600x400/?professional-cleaner-home" alt="Professional Cleaner" class="rounded shadow-lg">
+      </div>
+      <div class="md:w-1/2" data-aos="fade-left">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Homeowners Choose Sparkle Clean Co</h2>
+        <ul class="space-y-4 text-lg">
+          <li><strong>Over 10 Years of Experience</strong> — Skilled teams delivering consistent results.</li>
+          <li><strong>Fully Licensed & Insured</strong> — Clean with confidence and peace of mind.</li>
+          <li><strong>Satisfaction Guaranteed</strong> — We ensure every detail meets your expectations.</li>
         </ul>
       </div>
-      <img src="https://images.unsplash.com/photo-1581579183333-7cb3f4c2087e?auto=format&fit=crop&w=1650&q=80" alt="Professional cleaning team">
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials">
-    <div class="container">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial">
-          <p>"Sparkle Clean Co transformed our home — every surface spotless. Professional and meticulous."</p>
-          <span>- Jessica M.</span>
+  <section id="testimonials" class="py-24 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">What Our Clients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
+          <blockquote class="italic mb-4">“Sparkle Clean Co transformed my home — every corner spotless, every time.”</blockquote>
+          <p class="font-semibold">— Emily R., Chicago</p>
         </div>
-        <div class="testimonial">
-          <p>"Finally, a cleaning service that delivers exactly what they promise. Highly recommend."</p>
-          <span>- David R.</span>
-        </div>
-        <div class="testimonial">
-          <p>"Their attention to detail is unmatched. Our home feels brand new after every visit."</p>
-          <span>- Lauren K.</span>
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <blockquote class="italic mb-4">“Reliable, professional, and detail-oriented. Highly recommended.”</blockquote>
+          <p class="font-semibold">— Marcus L., Evanston</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quote / CTA Section -->
-  <section id="quote">
-    <div class="container">
-      <h2>Experience the Sparkle Difference</h2>
-      <p>Get your personalized premium cleaning quote today.</p>
-      <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <select required>
-          <option value="">Select Service</option>
-          <option value="house-cleaning">House Cleaning</option>
-          <option value="deep-cleaning">Deep Cleaning</option>
-          <option value="move-in-out">Move-In / Move-Out</option>
-          <option value="office-cleaning">Office & Commercial</option>
-        </select>
-        <button type="submit">Request a Quote</button>
-      </form>
+  <!-- Process Section -->
+  <section id="process" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12" data-aos="fade-up">Our Process</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+          <img src="https://source.unsplash.com/400x300/?schedule-cleaning" alt="Schedule" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Step 1: Schedule</h3>
+          <p>Select your service and preferred time with ease.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://source.unsplash.com/400x300/?cleaning-home" alt="Cleaning" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Step 2: Cleaning</h3>
+          <p>Our expert team arrives on time, fully equipped and thorough.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://source.unsplash.com/400x300/?clean-home-inspection" alt="Review" class="rounded mb-4">
+          <h3 class="text-xl font-semibold mb-2">Step 3: Review</h3>
+          <p>Inspect your home and enjoy a spotless, refreshed space.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Sparkle Clean Co | Serving premium homes with care and precision</p>
-    <p><a href="mailto:info@sparklecleanco.com">info@sparklecleanco.com</a> | (123) 456-7890</p>
-  </footer>
+  <!-- Final CTA Section -->
+  <section id="contact" class="py-24 bg-blue-600 text-white text-center">
+    <div class="container mx-auto px-6 md:px-12" data-aos="zoom-in">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready for a Spotless Home?</h2>
+      <p class="text-lg md:text-xl mb-6">Schedule your premium cleaning today and experience the difference.</p>
+      <a href="#contact" class="bg-white text-blue-600 font-semibold py-4 px-8 rounded shadow-lg hover:bg-gray-100 transition-all">Book Your Service</a>
+      <p class="mt-4 text-sm md:text-base">Licensed • Insured • Satisfaction Guaranteed</p>
+    </div>
+  </section>
 
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
